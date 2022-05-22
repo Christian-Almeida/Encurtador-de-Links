@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
-const nanoid = require('nanoid')
+const {nanoid} = require('nanoid')
+
+var ID = nanoid(7);
 
 const UrlSchema = new mongoose.Schema({
 
@@ -11,7 +13,7 @@ const UrlSchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
     },
-    uniqueId: {
+    _id: {
         type: String,
         required: true,
         default: () => nanoid(7),
